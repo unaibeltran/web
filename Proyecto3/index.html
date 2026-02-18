@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leyendas del Fútbol</title>
+
+    <style>
+        *{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        img.fotojugador {
+           width: 100%;
+        }
+        div.player-grid¨{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+        }
+
+        div.player-card{
+            margin: 30px;
+            background-color: rgb(150, 155, 194);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.8s;
+        
+        }
+
+        div.player-card:hover {
+            transform: rotate(8deg) translatey(-7px) scale(1.1);
+            box-shadow: 10px 10px 10px rgb(58, 58, 105) ;
+            background-color: rgb(233, 235, 229);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-navegacion">
+            <a href="pele.html">Pelé</a>
+        </div>
+        <h1>Leyendas del Fútbol</h1>
+        <p>Los jugadores más legendarios de todos los tiempos</p>
+    </header>
+
+    <main>
+        <div class="player-grid">
+            <div class = "player-card">
+                <a href="https:\\www.pele10.org">
+                    <img class="fotojugador" src="images/pele-1670369741960.webp">
+                </a>
+                
+                <div class = "player-info">
+                    <h2>Pelé</h2>
+                    <p>Brasil</p>
+                    <ul>
+                        <li>3 Copas del mundo (1958, 1962, 1970)</li>
+                        <li>1279 goles en 1363 partidos</li>
+                        <li>Considerado "El Rey del Fútbol"</li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "player-card">
+                <img class="fotojugador" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToi2ejL972NP35h2a4wbvRgByoOmX8Wbf2Cw&s">
+                <div class = "player-info">
+                    <h2>cristiano</h2>
+                    <p>portugal</p>
+                    <ul>
+                        <li>2342 goles </li>
+                        <li>mas de 3432 partidos perdidos contra el barsa</li>
+                        <li>Considerado "El Rey del Fútbol" no se considera </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "player-card">
+                <img class="fotojugador" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNP82H5t7uVuvq-v7ZXZ--gzNqJgxNnrGEqw&s">
+                <div class = "player-info">
+                    <h2>mesi</h2>
+                    <p>argentino</p>
+                    <ul>
+                        <li>98333 nCopas del mundo </li>
+                        <li>132312 goles en 6765 partidos</li>
+                        <li>Considerado "El Rey del Fútbol" si se considera el mejor del mundo </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "player-card">
+                <img class="fotojugador" src="https://jacobinlat.com/wp-content/uploads/2022/12/Maradona.jpg.webp">
+                <div class = "player-info">
+                    <h2>maradona </h2>
+                    <p>argentino</p>
+                    <ul>
+                        <li>9876 Copas del mundo (1958, 1962, 1970)</li>
+                        <li>12999 goles en 13638 partidos</li>
+                        <li>Considerado "El Rey del Fútbol" del mundomundual en la epoca a suya </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "player-card">
+                <img class="fotojugador" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTrF9OJLN-MlZGtDILnIpQCHVcrTE-w6Gq8y0Y2pV5Gojn24scytBLrqVSCPtrIiWMz_yhQGKSd7sgV1dMTd_F0c0wCwZT5xhZQjSU_rk&s=10">
+                <div class = "player-info">
+                    <h2>german </h2>
+                    <p>palomar de rroyos </p>
+                    <ul>
+                        <li>entrenador del alaves </li>
+                        <li>ha jugado en el madrid y en muchos mas equipos y entrenado </li>
+                        <li>Considerado "El Rey del Fútbol" su padre tambien fue istoria en escucha </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "player-card">
+                <img class="fotojugador" src="data:image/jpeg;base64,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">
+                <div class = "player-info">
+                    <h2>archival</h2>
+                    <p>madrid</p>
+                    <ul>
+                        <li>13 Copas del mundo (1958, 1962, 1970)</li>
+                        <li>7656 goles en 13693 partidos</li>
+                        <li>Considerado el pagillero del mundo mundial "</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p> Copyright 2025 Leyendas del Fútbol - Todos los derechos reservados</p>
+        <p>Andrés Cebrián. Desde Utrillas con amor</p>
+    </footer>
+</body>
+</html>
