@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mineros Enanos</title>
+
+    <style>
+
+        body{
+          font-family:unset;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(210, 250, 5);
+            padding:20px;
+        }
+
+        .game-container{
+            background-color: rgb(235, 235, 231);
+            background-color: rgb(64, 208, 7);
+            padding:25px;
+            border-radius: 20px;
+            box-shadow: 7px 7px 7px rgb(8, 11, 5);
+            text-align: center;
+            margin-bottom: 20px;
+            width:250px;
+            
+        }
+      
+        .mine-button{
+            background-color: rgb(239, 242, 241);
+            background-color: rgb(233, 233, 232);
+            border:2px rgb(7, 0, 0) dashed;
+            padding: 15px 25px;
+            font-size: 2rem;
+            border-radius: 100px;
+            cursor:pointer;
+            transition: transform 0.2s;
+
+        }
+
+        .mine-button:hover{
+
+             transform: scale(1.05);
+           
+        }
+
+        .mine-button:active{
+
+            transform: scale(2);
+           
+        }
+
+        .stats{
+           
+        }
+
+        .progress-bar{
+          
+            background-color: rgb(0, 0, 0);
+            border: 3px black solid;
+            border-radius: 20px;
+            align-items: center;
+            width:250px;
+            height: 35px;
+            margin: auto;
+            overflow: hidden;
+           
+        }
+
+        .progress-fill{
+            background-color: rgb(251, 213, 0);
+            width:0%;
+            height:100%
+        }
+
+        .descripcion{
+            font-size: 0.6rem;
+        }
+
+      
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>LAS RATAS MINERAS</h1>
+        <button class="mine-button" onclick="recogercomida()">
+            <strong>picar </strong>
+        </button>
+        <div class="stats">
+            <p>comida: <span id="ratatui">0</span> / <span id="maxStore">100</span></p>
+            <div class="progress-bar">
+                <div id="progressfill" class ="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="game-container">
+        <h3>mejoras de ratas</h3>
+        <div class="upgrades">
+            <div class="upgrade">
+                <h5>Almacén</h5>
+                <p>Nivel: <span id="nivelAlmacen">0</span> </p>
+                <p class="descripcion">Cada almacén acumula 500 unidades más</p>
+                <button class="botonmejora" onclick="compraAlm()"> <strong>Compra Almacén</strong>
+                </button>
+            </div>
+            <div class="upgrade">
+                <h5>Mineros</h5>
+                <p>Nivel: <span id="nivelMinero">0</span> </p>
+                <p class="descripcion">Cada trabajador mina 1 piedra por segundo</p>
+                <button class="botonmejora" onclick="compraMin()"> <strong>Contrata Minero</strong> </button>
+            </div>
+        </div>
+    </div>
+    
+   
+    <script>
+
+        //VARIABLES GENERALES
+       //Andres no tengo ni puta idea de lo que estas haciendo 
+         let comida = 0
+         let almacen_inicial = 100
+        let progreso_barra = 0 
+       
+        //VARIABLES ALMACEN
+        let nivelAlm = 0 
+        let costeBaseAlm = 20
+        let costeAlm = costeBaseAlm
+        let maxStorage = almacen_inicial
+
+        //VARIABLES TRABAJADORES
+        
+       function recogercomida (){
+             
+
+            if(comida < maxStorage)
+            {
+                comida = comida + 1
+                progreso_barra = comida/maxStorage * 100
+            }
+            update()
+        }    
+
+       function update()
+       {
+         document.getElementById("ratatui").innerText = comida 
+         document.getElementById("maxStore").innerText = maxStorage 
+         document.getElementById("nivelAlmacen").innerText = nivelAlm 
+         document.getElementById("progressfill").style.width = progreso_barra + "%"
+       }
+       
+       function compraAlm()
+        {
+            if(comida > costeAlm)
+            {
+                nivelAlm++
+               comida -= costeAlm
+                costeAlm = nivelAlm*costeBaseAlm
+                maxStorage = (nivelAlm+1) * 100
+                update()
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>
